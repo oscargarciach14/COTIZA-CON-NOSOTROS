@@ -26,7 +26,10 @@
 
     body {
       font-family: "Roboto", system-ui, sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(900px circle at 50% -10%, rgba(37, 211, 102, 0.14), transparent 55%),
+        radial-gradient(700px circle at 10% 10%, rgba(255, 255, 255, 0.05), transparent 50%),
+        var(--bg);
       color: var(--ink);
       min-height: 100vh;
       line-height: 1.5;
@@ -39,14 +42,29 @@
     }
 
     h1 {
-      font-size: clamp(1.75rem, 4vw, 2.25rem);
-      font-weight: 600;
-      letter-spacing: 0.12em;
+      font-size: clamp(2.15rem, 5.2vw, 3.05rem);
+      font-weight: 700;
+      letter-spacing: 0.09em;
       text-align: center;
       text-transform: uppercase;
-      color: var(--ink);
+      color: transparent;
       font-family: "Montserrat", system-ui, sans-serif;
+      background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.78) 45%, #ffffff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
       margin-bottom: clamp(2.5rem, 6vw, 4rem);
+      text-shadow: 0 22px 65px rgba(0, 0, 0, 0.6);
+    }
+
+    h1::after {
+      content: "";
+      display: block;
+      width: min(520px, 78%);
+      height: 2px;
+      margin: 1.25rem auto 0;
+      background: linear-gradient(90deg, transparent, rgba(37, 211, 102, 0.85), transparent);
+      border-radius: 999px;
+      box-shadow: 0 0 0 1px rgba(37, 211, 102, 0.12);
     }
 
     .gallery {
@@ -84,7 +102,7 @@
 
     .cta {
       text-align: center;
-      padding-top: 0.5rem;
+      padding-top: 1.25rem;
       border-top: 1px solid var(--line);
     }
 
@@ -93,24 +111,33 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      padding: 0.9rem 1.75rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
+      padding: 1rem 2.15rem;
+      font-size: 0.96rem;
+      font-weight: 650;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       text-decoration: none;
-      color: var(--ink);
+      font-family: "Montserrat", system-ui, sans-serif;
+      color: #ffffff;
       background: var(--accent);
-      border: 1px solid var(--accent);
-      transition: background 0.2s ease, color 0.2s ease;
+      border: 1px solid rgba(37, 211, 102, 0.65);
+      border-radius: 999px;
+      box-shadow:
+        0 16px 45px rgba(37, 211, 102, 0.18),
+        0 2px 0 rgba(255, 255, 255, 0.08) inset;
+      transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
     }
 
     .cta a:hover {
-      filter: brightness(0.95);
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+      box-shadow:
+        0 22px 60px rgba(37, 211, 102, 0.24),
+        0 2px 0 rgba(255, 255, 255, 0.12) inset;
     }
 
     .cta a:focus-visible {
-      outline: 2px solid var(--accent);
+      outline: 2px solid rgba(37, 211, 102, 0.85);
       outline-offset: 3px;
     }
   </style>
