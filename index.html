@@ -47,17 +47,13 @@
       margin-bottom: 1.8rem;
     }
 
-    .brand {
-      font-family: "Montserrat", system-ui, sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 0.5rem 0.9rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.05);
+    .brand-logo {
+      height: clamp(34px, 5vw, 52px);
+      width: auto;
+      display: block;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
     }
 
     h1 {
@@ -145,6 +141,11 @@
     .category {
       margin-bottom: 2.5rem;
       scroll-margin-top: 1rem;
+      display: none;
+    }
+
+    .category.active {
+      display: block;
     }
 
     .category h2 {
@@ -174,6 +175,14 @@
       object-fit: cover;
       border: 1px solid var(--line);
       filter: grayscale(12%) contrast(1.03) brightness(0.9);
+    }
+
+    .hint {
+      margin: -2.1rem 0 2.2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+      letter-spacing: 0.03em;
     }
 
     .cta {
@@ -221,28 +230,33 @@
 <body>
   <div class="wrap">
     <div class="topbar">
-      <div class="brand">Muebles &amp; Diseños</div>
+      <img
+        class="brand-logo"
+        src="file:///C:/Users/auxil/.cursor/projects/c-PROYECTO-NUEVO/assets/c__Users_auxil_AppData_Roaming_Cursor_User_workspaceStorage_b9a50cf2bd510c063389fdd9694b9700_images_image-9cca0296-b496-40c5-89f6-2b5e879f60dc.png"
+        alt="Logo Muebles &amp; Diseños"
+      />
     </div>
 
     <h1>COTIZA CON NOSOTROS</h1>
+    <p class="hint">Haz clic en una categoría para ver más proyectos en madera y tableros de melamina.</p>
 
     <div class="gallery">
-      <a href="#oficinas">
+      <a href="#oficinas" data-category="oficinas">
         <figure><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" alt="Oficinas" loading="lazy" /><figcaption>Oficinas</figcaption></figure>
       </a>
-      <a href="#casas-lujo">
-        <figure><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Casas de lujo" loading="lazy" /><figcaption>Casas de lujo</figcaption></figure>
+      <a href="#casas-lujo" data-category="casas-lujo">
+        <figure><img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=900&q=80" alt="Casas de lujo" loading="lazy" /><figcaption>Casas de lujo</figcaption></figure>
       </a>
-      <a href="#cocinas">
+      <a href="#cocinas" data-category="cocinas">
         <figure><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80" alt="Cocinas" loading="lazy" /><figcaption>Cocinas</figcaption></figure>
       </a>
-      <a href="#closets">
-        <figure><img src="https://images.unsplash.com/photo-1616594039964-3f8f5f56f4b7?auto=format&fit=crop&w=900&q=80" alt="Closets" loading="lazy" /><figcaption>Closets</figcaption></figure>
+      <a href="#closets" data-category="closets">
+        <figure><img src="https://images.unsplash.com/photo-1617104551722-3b2d513664c5?auto=format&fit=crop&w=900&q=80" alt="Closets" loading="lazy" /><figcaption>Closets</figcaption></figure>
       </a>
-      <a href="#muebles-tv">
-        <figure><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80" alt="Muebles de TV" loading="lazy" /><figcaption>Muebles de TV</figcaption></figure>
+      <a href="#muebles-tv" data-category="muebles-tv">
+        <figure><img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=900&q=80" alt="Muebles de TV" loading="lazy" /><figcaption>Muebles de TV</figcaption></figure>
       </a>
-      <a href="#salas-juntas">
+      <a href="#salas-juntas" data-category="salas-juntas">
         <figure><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80" alt="Salas de juntas" loading="lazy" /><figcaption>Salas de juntas</figcaption></figure>
       </a>
     </div>
@@ -252,16 +266,16 @@
       <div class="category-grid">
         <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Oficina moderna 1" loading="lazy" />
         <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=900&q=80" alt="Oficina moderna 2" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1462392246754-28dfa2df8e6b?auto=format&fit=crop&w=900&q=80" alt="Oficina moderna 3" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=900&q=80" alt="Oficina moderna 3" loading="lazy" />
       </div>
     </section>
 
     <section class="category" id="casas-lujo">
       <h2>Casas de lujo</h2>
       <div class="category-grid">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Casa de lujo 1" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=900&q=80" alt="Casa de lujo 2" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=80" alt="Casa de lujo 3" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=900&q=80" alt="Casa de lujo 1" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1617104551722-3b2d513664c5?auto=format&fit=crop&w=900&q=80" alt="Casa de lujo 2" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1616594039964-3f8f5f56f4b7?auto=format&fit=crop&w=900&q=80" alt="Casa de lujo 3" loading="lazy" />
       </div>
     </section>
 
@@ -269,16 +283,16 @@
       <h2>Cocinas</h2>
       <div class="category-grid">
         <img src="https://images.unsplash.com/photo-1556911220-bda9f7f7597e?auto=format&fit=crop&w=900&q=80" alt="Cocina 1" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=900&q=80" alt="Cocina 2" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1564540583246-934409427776?auto=format&fit=crop&w=900&q=80" alt="Cocina 3" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=900&q=80" alt="Cocina 2" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?auto=format&fit=crop&w=900&q=80" alt="Cocina 3" loading="lazy" />
       </div>
     </section>
 
     <section class="category" id="closets">
       <h2>Closets</h2>
       <div class="category-grid">
-        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=900&q=80" alt="Closet 1" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1616628182509-6c4a58d2b204?auto=format&fit=crop&w=900&q=80" alt="Closet 2" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1616594039964-3f8f5f56f4b7?auto=format&fit=crop&w=900&q=80" alt="Closet 1" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1617104551722-3b2d513664c5?auto=format&fit=crop&w=900&q=80" alt="Closet 2" loading="lazy" />
         <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=900&q=80" alt="Closet 3" loading="lazy" />
       </div>
     </section>
@@ -286,9 +300,9 @@
     <section class="category" id="muebles-tv">
       <h2>Muebles de TV</h2>
       <div class="category-grid">
-        <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=900&q=80" alt="Mueble de TV 1" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=900&q=80" alt="Mueble de TV 1" loading="lazy" />
         <img src="https://images.unsplash.com/photo-1616593969747-4797dc75033e?auto=format&fit=crop&w=900&q=80" alt="Mueble de TV 2" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=900&q=80" alt="Mueble de TV 3" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1617098474202-0d0d7f60f4f7?auto=format&fit=crop&w=900&q=80" alt="Mueble de TV 3" loading="lazy" />
       </div>
     </section>
 
@@ -296,7 +310,7 @@
       <h2>Salas de juntas</h2>
       <div class="category-grid">
         <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=900&q=80" alt="Sala de juntas 1" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1572025442646-866d16c84a54?auto=format&fit=crop&w=900&q=80" alt="Sala de juntas 2" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1577415124269-fc1140a69e91?auto=format&fit=crop&w=900&q=80" alt="Sala de juntas 2" loading="lazy" />
         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Sala de juntas 3" loading="lazy" />
       </div>
     </section>
@@ -311,5 +325,27 @@
       </a>
     </div>
   </div>
+  <script>
+    const categoryLinks = document.querySelectorAll("[data-category]");
+    const categories = document.querySelectorAll(".category");
+
+    function showCategory(id) {
+      categories.forEach((section) => {
+        section.classList.toggle("active", section.id === id);
+      });
+
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    categoryLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        showCategory(link.dataset.category);
+      });
+    });
+  </script>
 </body>
 </html>
